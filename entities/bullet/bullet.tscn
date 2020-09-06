@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://entities/bullet/bullet.gd" type="Script" id=1]
+[ext_resource path="res://entities/bullet/bullet.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 0.98407
+height = 6.88478
+
+[node name="bullet" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 6
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bullet_texture" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="bullet_collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="visiblity_notifier" type="VisibilityNotifier2D" parent="."]
+scale = Vector2( 0.313677, 0.677623 )
+[connection signal="screen_exited" from="visiblity_notifier" to="." method="_on_visiblity_notifier_screen_exited"]

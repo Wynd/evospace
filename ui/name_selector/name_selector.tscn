@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ui/kenny_mini_16px.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/name_selector/selected.png" type="Texture" id=3]
+[ext_resource path="res://ui/name_selector/selected_2.png" type="Texture" id=4]
+[ext_resource path="res://ui/name_selector/name_selector.gd" type="Script" id=5]
+
+[sub_resource type="AnimatedTexture" id=1]
+frames = 2
+fps = 2.0
+frame_0/texture = ExtResource( 3 )
+frame_1/texture = ExtResource( 4 )
+frame_1/delay_sec = 0.0
+
+[node name="name_selector" type="Control"]
+anchor_right = 0.312
+anchor_bottom = 0.16
+margin_right = 0.079998
+margin_bottom = -0.0400009
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="first_char" type="Label" parent="."]
+margin_right = 16.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 1 )
+text = "A"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="second_char" type="Label" parent="."]
+margin_left = 16.0
+margin_right = 32.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 1 )
+text = "A"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="third_char" type="Label" parent="."]
+margin_left = 32.0
+margin_right = 48.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 1 )
+text = "A"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="selector" type="TextureRect" parent="."]
+margin_left = -2.0
+margin_top = -0.125
+margin_right = 16.0
+margin_bottom = 21.875
+texture = SubResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

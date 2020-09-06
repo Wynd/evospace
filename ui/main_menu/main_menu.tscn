@@ -1,0 +1,102 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://ui/Kenney Mini.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ui/background.png" type="Texture" id=2]
+[ext_resource path="res://ui/kenny_mini_8px.tres" type="DynamicFont" id=3]
+[ext_resource path="res://objects/spawner/spawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/meteorite/meteorite.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ui/main_menu/menu.gd" type="Script" id=6]
+[ext_resource path="res://ui/main_menu/caret_1.png" type="Texture" id=7]
+[ext_resource path="res://ui/main_menu/caret_2.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="AnimatedTexture" id=2]
+frames = 2
+frame_0/texture = ExtResource( 7 )
+frame_1/texture = ExtResource( 8 )
+frame_1/delay_sec = 0.0
+
+[node name="main_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="spawner" parent="." instance=ExtResource( 4 )]
+position = Vector2( 72, -8 )
+spawn_type = ExtResource( 5 )
+maximum_spawns = -1
+spawn_interval = 0.5
+
+[node name="layer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="title" type="Label" parent="layer"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 52.0
+custom_fonts/font = SubResource( 1 )
+text = "Evospace"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu" type="Control" parent="layer"]
+margin_left = 48.0
+margin_top = 56.0
+margin_right = 112.0
+margin_bottom = 112.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="start" type="Label" parent="layer/menu"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 40.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 3 )
+text = "Start"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="highscores" type="Label" parent="layer/menu"]
+margin_left = 8.0
+margin_top = 24.0
+margin_right = 62.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 3 )
+text = "Hiscore"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="caret" type="TextureRect" parent="layer/menu"]
+margin_top = 8.0
+margin_right = 8.0
+margin_bottom = 16.0
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 80, 72 )
+scale = Vector2( 22, 20 )
+z_index = -100
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}

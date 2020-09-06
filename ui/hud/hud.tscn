@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ui/kenny_mini_8px.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/life.png" type="Texture" id=2]
+[ext_resource path="res://ui/special.png" type="Texture" id=3]
+[ext_resource path="res://ui/hud/hud.gd" type="Script" id=4]
+
+[node name="hud" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="layer" type="CanvasLayer" parent="."]
+
+[node name="score_label" type="Label" parent="layer"]
+margin_top = 134.0
+margin_right = 80.0
+margin_bottom = 144.0
+custom_fonts/font = ExtResource( 1 )
+text = "Score: 00000000"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lives_label" type="Label" parent="layer"]
+margin_left = 152.118
+margin_top = 134.135
+margin_right = 160.118
+margin_bottom = 144.135
+custom_fonts/font = ExtResource( 1 )
+text = "9"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lives_texture" type="TextureRect" parent="layer"]
+margin_left = 143.375
+margin_top = 136.062
+margin_right = 151.375
+margin_bottom = 144.062
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombs_label" type="Label" parent="layer"]
+margin_left = 134.904
+margin_top = 134.33
+margin_right = 142.904
+margin_bottom = 144.33
+custom_fonts/font = ExtResource( 1 )
+text = "9"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombs_texture" type="TextureRect" parent="layer"]
+margin_left = 125.891
+margin_top = 135.84
+margin_right = 133.891
+margin_bottom = 143.84
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="timer_label" type="Label" parent="layer"]
+margin_left = 100.192
+margin_top = 133.603
+margin_right = 127.192
+margin_bottom = 143.603
+custom_fonts/font = ExtResource( 1 )
+text = "T: 120"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="round_timer" type="Timer" parent="layer/timer_label"]
+wait_time = 120.0
+autostart = true
+[connection signal="timeout" from="layer/timer_label/round_timer" to="." method="_on_round_timer_timeout"]
