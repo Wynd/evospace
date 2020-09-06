@@ -82,6 +82,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="infinite" type="Label" parent="layer/menu"]
+margin_left = 8.0
+margin_top = 40.0
+margin_right = 56.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 3 )
+text = "Infinite"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="caret" type="TextureRect" parent="layer/menu"]
 margin_top = 8.0
 margin_right = 8.0

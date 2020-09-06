@@ -5,7 +5,7 @@ var index = 0
 var spacing = 16
 var start_position = 8
 var menu_items = 0
-var positions = [ 8, 24 ]
+var positions = [ 8, 24, 40 ]
 
 var highscores_screen = load("ui/hiscores/hiscores.tscn")
 var game_screen = load("levels/demo.tscn")
@@ -43,6 +43,12 @@ func update_caret():
 func start():
 	get_node("../../").queue_free()
 	get_tree().get_root().add_child(game_screen)
+	
+func infinite():
+	get_node("../../").queue_free()
+	get_tree().get_root().add_child(game_screen)
+	get_tree().get_root().get_node("level").get_node("hud").timer.stop()
+	get_tree().get_root().get_node("level").get_node("hud").get_node("layer").get_node("timer_label").hide() # Oh boy...there is a better way of doing this _I know it_
 
 func highscores():
 	get_node("../../").queue_free()

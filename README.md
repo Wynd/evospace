@@ -21,6 +21,7 @@ Short and noob friendly bullet hell for [GBJAM 8](https://itch.io/jam/gbjam-8)
 * Enemies will drop 2 types of power ups:
 	* Double - shoots 2 lasers with the same power and slightly faster cooldown
 	* Fast - shoots 1 laser without cooldown but significantly less damage than the standard laser
+* The Infinite mode is the same except there is no time limit! All the above rules are still applied
 
 ## Credits :​
 
